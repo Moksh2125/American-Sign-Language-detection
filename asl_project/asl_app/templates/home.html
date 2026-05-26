@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}ASL Detection - ASL Guide{% endblock %}
+
+{% block page_type %}home{% endblock %}
+
+{% block home_active %}active{% endblock %}
+
+{% block content %}
+<h2>ASL Sign Language Guide</h2>
+
+<!-- Introduction Section -->
+<div class="guide-intro">
+  <h3>Welcome to the ASL Learning Guide</h3>
+  <p>Learn American Sign Language (ASL) with our comprehensive visual guide. Each sign is demonstrated with clear images and descriptions to help you practice and master ASL communication.</p>
+  <p>Use the search and filter options below to find specific signs or browse by category.</p>
+</div>
+
+<!-- Filter Section -->
+<div class="filter-section">
+  <input type="text" class="search-box" placeholder="Search for signs..." id="searchBox">
+  <div class="category-filters">
+    <button class="filter-btn active" onclick="filterByCategory('all')">All</button>
+    <button class="filter-btn" onclick="filterByCategory('alphabet')">Alphabet</button>
+    <button class="filter-btn" onclick="filterByCategory('numbers')">Numbers</button>
+    <button class="filter-btn" onclick="filterByCategory('common')">Common Words</button>
+  </div>
+</div>
+
+<!-- ASL Signs Grid -->
+<div class="signs-grid" id="signsGrid">
+  <!-- Loading state initially -->
+  <div class="loading" id="loadingState">
+    <div class="loading-spinner"></div>
+    <p>Loading ASL signs...</p>
+  </div>
+</div>
+
+<!-- Quick Navigation to Detection -->
+<div class="quick-nav">
+  <p>Ready to practice? Try our live detection feature!</p>
+  <a href="{% url 'detection' %}" class="nav-button">🎥 Start Live Detection</a>
+</div>
+{% endblock %}

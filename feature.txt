@@ -1,0 +1,47 @@
+<!-- {% extends 'base.html' %}
+
+{% block title %}ASL Detection - Live Detection{% endblock %}
+
+{% block page_type %}detection{% endblock %}
+
+{% block detection_active %}active{% endblock %}
+
+{% block content %}
+<h2>
+  Live ASL Detection
+  <span class="status-indicator" id="statusIndicator"></span>
+</h2>
+
+<!-- Instructions Section -->
+<div class="detection-intro">
+  <p>Use your camera to detect ASL signs in real-time. Make sure you have good lighting and position your hand clearly in front of the camera.</p>
+</div>
+
+<button class="start-button" onclick="startCamera()" id="startBtn">
+  ▶️ Start Camera
+</button>
+
+<div class="camera-container">
+  <img id="camera" alt="ASL Detection Camera Feed">
+</div>
+
+<div class="detection-section">
+  <p>Detected Characters:</p>
+  <div id="output-text">{{ output }}</div>
+</div>
+
+<div class="controls">
+  <button class="speak-button" onclick="speak()">
+    🔊 Read Out
+  </button>
+  <button class="clear-button" onclick="clearText()">
+    🗑️ Clear Text
+  </button>
+</div>
+
+<!-- Back to Guide -->
+<div class="quick-nav">
+  <p>Need to review signs?</p>
+  <a href="{% url 'home' %}" class="nav-button">📖 Back to ASL Guide</a>
+</div>
+{% endblock %} -->

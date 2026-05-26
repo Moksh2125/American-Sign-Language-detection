@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}ASL Detection{% endblock %}</title>
+  
+  <!-- Combined CSS -->
+  <link rel="stylesheet" href="{% static 'css/main_styles.css' %}">
+  
+  <!-- Additional CSS for specific pages -->
+  {% block extra_css %}{% endblock %}
+</head>
+<body data-page="{% block page_type %}{% endblock %}">
+  
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="{% url 'home' %}" class="navbar-brand">🤟 ASL Detection</a>
+      <ul class="navbar-nav">
+        <li><a href="{% url 'home' %}" class="nav-link {% block home_active %}{% endblock %}">ASL Guide</a></li>
+        <li><a href="{% url 'detection' %}" class="nav-link {% block detection_active %}{% endblock %}">Live Detection</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Floating Hand Animations -->
+  <div class="floating-hand hand-1">👋</div>
+  <div class="floating-hand hand-2">🤟</div>
+  <div class="floating-hand hand-3">👌</div>
+  <div class="floating-hand hand-4">✌️</div>
+
+  <!-- Main Content Area -->
+  <div class="container">
+    {% block content %}
+    <!-- Page-specific content goes here -->
+    {% endblock %}
+  </div>
+
+  <!-- Combined JavaScript -->
+  <script src="{% static 'js/main_scripts.js' %}"></script>
+  
+  <!-- JavaScript Configuration -->
+  <script>
+    // Configure JavaScript with Django URLs
+    setConfig({
+      videoFeedUrl: "{% url 'video_feed' %}",
+      updateTextUrl: "{% url 'get_text' %}",
+      signsUrl: "{% url 'get_signs' %}",
+      placeholderImage: "{% static 'images/placeholder.png' %}"
+    });
+  </script>
+  
+  <!-- Additional JavaScript for specific pages -->
+  {% block extra_js %}{% endblock %}
+</body>
+</html>
